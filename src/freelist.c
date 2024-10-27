@@ -58,11 +58,11 @@ Block * free_list_search_wf(size_t size) {
  **/
 Block * free_list_search(size_t size) {
     Block * block = NULL;
-#if	defined FIT && FIT == 0
+#if     defined FIT && FIT == 0
     block = free_list_search_ff(size);
-#elif	defined FIT && FIT == 1
+#elif   defined FIT && FIT == 1
     block = free_list_search_wf(size);
-#elif	defined FIT && FIT == 2
+#elif   defined FIT && FIT == 2
     block = free_list_search_bf(size);
 #endif
 
@@ -87,7 +87,7 @@ Block * free_list_search(size_t size) {
  *
  * @param   block   Pointer to block to insert into free list.
  **/
-void	free_list_insert(Block *block) {
+void    free_list_insert(Block *block) {
     // TODO: Check that we have a valid block
 
     // TODO: Insert the block into the free list such that it is in sorted

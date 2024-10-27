@@ -18,7 +18,7 @@
  * @param   size    Number of bytes to allocate.
  * @return  Pointer to data portion of newly allocate block.
  **/
-Block *	block_allocate(size_t size) {
+Block * block_allocate(size_t size) {
     // Allocate block
     intptr_t allocated = sizeof(Block) + ALIGN(size);
     Block *  block     = sbrk(allocated);
@@ -48,7 +48,7 @@ Block *	block_allocate(size_t size) {
  * @param   block   Pointer to block to release.
  * @return  Whether or not the release completed successfully.
  **/
-bool	block_release(Block *block) {
+bool    block_release(Block *block) {
     size_t allocated = 0;
 
     // TODO: Check if block is at the end of the heap or if allocation size
@@ -89,7 +89,7 @@ Block * block_detach(Block *block) {
  * @param   src     Source block we are merging from.
  * @return  Whether or not the merge completed successfully.
  **/
-bool	block_merge(Block *dst, Block *src) {
+bool    block_merge(Block *dst, Block *src) {
     // TODO: Compare end of dst to start of src
 
     // TODO: Merge by modifying appropriate dst and src attributes
